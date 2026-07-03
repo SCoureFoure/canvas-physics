@@ -29,3 +29,11 @@ npm test
 ```
 
 Headless: the same engine + scene files run under node:test; scenes are verified by stepping the simulation (e.g. the wrecking ball must actually knock the tower over) rather than by rendering.
+
+## Snapshots
+
+```
+node tools/snapshot.mjs wrecking-ball ./shots 0 0.9 1.6 4
+```
+
+Renders PNG frames of any scene headlessly (software rasterizer + hand-rolled PNG encoder, zero dependencies) — the same `render()` the browser runs, fed a pixel-buffer stand-in for the 2D context. Useful for eyeballing physics without opening a browser.
