@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>canvas-physics</title>
+<style>
+  html, body { margin: 0; min-height: 100%; background: #05070c; color: #d8dee9; font: 16px/1.5 system-ui, sans-serif; }
+  main { max-width: 720px; margin: 0 auto; padding: 48px 24px; }
+  h1 { color: #e5e9f0; font-size: 1.6rem; margin: 0 0 4px; }
+  .sub { color: #4c566a; margin: 0 0 32px; }
+  a.card { display: block; text-decoration: none; background: #0b0e14; border: 1px solid #1c2230; border-radius: 10px; padding: 18px 20px; margin: 14px 0; transition: border-color .15s; }
+  a.card:hover { border-color: #88c0d0; }
+  a.card h2 { color: #88c0d0; font-size: 1.1rem; margin: 0 0 4px; }
+  a.card p { color: #7b88a1; margin: 0; font-size: .92rem; }
+  footer { color: #3b4252; font-size: .85rem; margin-top: 40px; }
+  footer a { color: #4c566a; }
+</style>
+</head>
+<body>
+<main>
+  <h1>canvas-physics</h1>
+  <p class="sub">Real 2D rigid-body physics on a bare canvas — impulse collisions, restitution, Coulomb friction, rigid constraints, fixed-timestep simulation. No dependencies, no build.</p>
+
+  <a class="card" href="scenes/bouncing-balls.html">
+    <h2>Bouncing Balls</h2>
+    <p>Twelve seeded balls under gravity, restitution 0.85 — watch the energy decay honestly, bounce by bounce.</p>
+  </a>
+  <a class="card" href="scenes/cannon.html">
+    <h2>Cannon vs Crate Pyramid</h2>
+    <p>Click anywhere to fire a cannonball. Friction-stacked crates scatter under real impulse resolution.</p>
+  </a>
+  <a class="card" href="scenes/wrecking-ball.html">
+    <h2>Wrecking Ball</h2>
+    <p>A heavy ball on a rigid five-link chain swings through two box towers. The crash is simulated, not scripted.</p>
+  </a>
+
+  <footer><a href="https://github.com/SCoureFoure/canvas-physics">Source on GitHub</a> · engine + scenes verified headless via node:test</footer>
+</main>
+</body>
+</html>
