@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Cannon vs Crate Pyramid</title>
+<style>
+  html, body { margin: 0; height: 100%; display: grid; place-items: center; background: #05070c; }
+  canvas { box-shadow: 0 0 40px #000; }
+  p { position: fixed; top: 8px; left: 12px; color: #4c566a; font: 13px system-ui; }
+</style>
+</head>
+<body>
+<p>Click anywhere to fire a cannonball at the pyramid.</p>
+<canvas id="c" width="900" height="600"></canvas>
+<script src="../src/engine/vec2.js"></script>
+<script src="../src/engine/collide.js"></script>
+<script src="../src/engine/resolve.js"></script>
+<script src="../src/engine/world.js"></script>
+<script src="../src/engine/loop.js"></script>
+<script src="js/cannon.js"></script>
+<script>
+  const scene = Scenes['cannon'];
+  const canvas = document.getElementById('c');
+  canvas.width = scene.width;
+  canvas.height = scene.height;
+  const ctx = canvas.getContext('2d');
+  const world = new Phys.World();
+  scene.setup(world);
+  if (scene.onPointer) {
+    canvas.addEventListener('pointerdown', (e) => {
+      const r = canvas.getBoundingClientRect();
+      scene.onPointer(world, (e.clientX - r.left) * (canvas.width / r.width), (e.clientY - r.top) * (canvas.height / r.height));
+    });
+  }
+  const loop = Phys.createLoop({
+    step: (dt) => world.step(dt),
+    render: () => scene.render(ctx, world),
+  });
+  loop.start();
+</script>
+</body>
+</html>

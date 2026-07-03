@@ -1,0 +1,10 @@
+{
+  "name": "canvas-physics",
+  "version": "0.1.0",
+  "description": "Self-contained HTML5 canvas scenes driven by a real 2D physics engine — gravity, impulse collisions, constraints, fixed-timestep simulation.",
+  "type": "module",
+  "scripts": {
+    "test": "node --test"
+  },
+  "license": "MIT"
+}
