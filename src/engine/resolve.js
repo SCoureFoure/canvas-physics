@@ -1,5 +1,6 @@
 globalThis.Phys = globalThis.Phys || {};
 
+(() => {
 const Phys = globalThis.Phys;
 
 // Resolve a collision between two bodies with impulse-based physics,
@@ -69,3 +70,4 @@ Phys.resolveCollision = function(a, b, contact) {
   b.pos.x += corr * nx * b.invMass;
   b.pos.y += corr * ny * b.invMass;
 };
+})();

@@ -1,5 +1,6 @@
 globalThis.Phys = globalThis.Phys || {};
 
+(() => {
 const Phys = globalThis.Phys;
 
 // Clamp a value between lo and hi
@@ -118,3 +119,4 @@ Phys.collide = function (a, b) {
 
   throw new Error('unknown shape pair');
 };
+})();

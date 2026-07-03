@@ -1,5 +1,6 @@
 globalThis.Phys = globalThis.Phys || {};
 
+(() => {
 const Phys = globalThis.Phys;
 
 // Pure factory for physics bodies.
@@ -176,3 +177,4 @@ Phys.World = class {
     }
   }
 };
+})();

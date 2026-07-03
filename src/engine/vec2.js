@@ -1,5 +1,6 @@
 globalThis.Phys = globalThis.Phys || {};
 
+(() => {
 const Phys = globalThis.Phys;
 
 // Create a 2D vector
@@ -60,3 +61,4 @@ Phys.perp = function(a) {
 Phys.clone = function(a) {
   return { x: a.x, y: a.y };
 };
+})();
